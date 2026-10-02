@@ -1,46 +1,41 @@
-# This is a basic workflow to help you get started with Actions
+name: Deploy Vue App to GitHub Pages
 
-name: Crear Dist
-
-# Controls when the action will run.
 on:
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  push:
+    branches:
+      - master # Se ejecuta cuando hay cambios en master
+  workflow_dispatch: # Permite ejecutarlo manualmente desde la pestaña Actions
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions:
+  contents: write # Necesario para hacer push a la rama gh-pages
+
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build-and-deploy:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Use Node.js 14.19.0
-        uses: actions/setup-node@v1
+      - name: Checkout Repo
+        uses: actions/checkout@v4
         with:
-          node-version: 14.19.0
+          fetch-depth: 0 # Historial completo para que funcione git subtree split
 
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+          cache: npm
 
-      - name: Instalacion de dependencias
-        run: npm install
+      - name: Install Dependencies
+        run: npm ci # Usa package-lock.json para instalaciones rápidas y estables
 
-      - name: construccion de dist
+      - name: Build Vue App
         run: npm run build
 
-      - name: agregar nevo dist a gh-pages
+      - name: Deploy to GitHub Pages
         run: |
-          git config user.name maoSantaella
-          git config user.email mao.santaella@gmail.com
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b newdist
           git add --force dist
-          git commit -m "new dist"
-          git push -u origin newdist
+          git commit -m "Deploy to GitHub Pages 🚀"
           git push origin `git subtree split --prefix dist newdist`:gh-pages --force
-          git push origin --delete newdist
-
-# git subtree push --prefix dist origin gh-pages

@@ -332,7 +332,8 @@ export default {
       referencia:
         'Resolución 2640 de 2007. [Instituto Colombiano Agropecuario ICA]. Por la cual se reglamenta las Condiciones sanitarias y de inocuidad en la producción primaria de ganado porcino destinado al sacrificio para consumo humano. 28 de septiembre de 2007.',
       tipo: 'Resolución ICA',
-      link: 'https://www.porkcolombia.co/resolucion-ica-2640-de-2007/',
+      link:
+        'https://www.mincit.gov.co/getattachment/8ad6f08d-7024-4088-b0f3-e9594b244f99/Resolucion-2640-del-28-de-septiembre-de-2007-Por-l.aspx',
     },
     {
       tema: 'Manual de bioseguridad',
@@ -456,24 +457,22 @@ export default {
   referencias: [
     {
       referencia: 'ARL Colmena. (2013). Guardián de seguridad.',
-      link:
-        'https://www.colmenaseguros.com/arl/gestion-conocimiento/material-educativo/Boletines/JUNIO-2013-GUARDIANES-DE-SEGURIDAD.pdf',
+      link: '',
     },
     {
       referencia:
         'ARL Sura (2018). Accidentes e incidentes de trabajo, importancia de la investigación de ambos.',
-      link:
-        'https://www.arlsura.com/index.php/component/content/article/59-centro-de-documentacion-anterior/gestion-de-la-salud-ocupacional-/326--sp-27016',
+      link: '',
     },
     {
       referencia: 'Carder (2017). Normatividad de residuos peligrosos.',
-      link:
-        'https://www.unilibre.edu.co/pereira/images/gaga/residuos-peligrosos.pdf',
+      link: '',
     },
     {
       referencia:
         'ICA (2007). Condiciones sanitarias y de inocuidad en la producción primaria de ganado porcino.',
-      link: 'https://www.porkcolombia.co/resolucion-ica-2640-de-2007/',
+      link:
+        'https://www.mincit.gov.co/getattachment/8ad6f08d-7024-4088-b0f3-e9594b244f99/Resolucion-2640-del-28-de-septiembre-de-2007-Por-l.aspx',
     },
     {
       referencia:
@@ -511,7 +510,7 @@ export default {
     {
       referencia: 'Ministerio de Salud de Colombia (2021). Enfermedad laboral.',
       link:
-        'https://www.minsalud.gov.co/proteccionsocial/RiesgosLaborales/Paginas/enfermedad-laboral.aspx',
+        'https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VP/DOA/RL/generalidades-enfermedad-laboral.pdf',
     },
     {
       referencia:
